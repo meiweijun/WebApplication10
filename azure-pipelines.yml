@@ -25,4 +25,4 @@ steps:
     deployToSlotOrASE: true
     ResourceGroupName: 'Test'
     SlotName: 'production'
-    packageForLinux: '$(build.artifactstagingdirectory)/**/MyProj.zip'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
