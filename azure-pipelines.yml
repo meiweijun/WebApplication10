@@ -17,6 +17,7 @@ steps:
   displayName: 'dotnet build $(buildConfiguration)'
 - task: AzureRmWebAppDeployment@4
   inputs:
+    arguments: '--output $(build.artifactstagingdirectory)'
     ConnectionType: 'AzureRM'
     azureSubscription: '免费试用 (7a83502b-3469-4b94-8b95-ce28711359d5)'
     appType: 'webAppLinux'
@@ -24,4 +25,4 @@ steps:
     deployToSlotOrASE: true
     ResourceGroupName: 'Test'
     SlotName: 'production'
-    packageForLinux: '$(build.artifactstagingdirectory)/**/*.zip'
+    packageForLinux: '$(build.artifactstagingdirectory)/**/MyProj.zip'
